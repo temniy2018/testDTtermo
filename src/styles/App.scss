@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import "~bootstrap/scss/bootstrap";
+
+$blackColor: rgba(0, 0, 0, 0.9);
+$defaultFontFamily: 'Roboto', sans-serif;
+
+%flexConfig {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    background-color: $blackColor;
+    padding: 10px;
+    top: 0;
+    z-index: 10;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    top: calc(100% - 27px);
+    background-color: $blackColor;
+
+    p {
+        font-size: 14px;
+        color: #7e878b;
+        font-family: $defaultFontFamily;
+        margin: 5px;
+        text-align: center;
+    }
+}
+
+.root {
+    margin-top: 87px;
+    margin-bottom: 31px;
+}
+
+.error {
+    font-size: 10px;
+    font-family: $defaultFontFamily;
+    color: rgb(224, 22, 22);
+}
+
+.flexDiv {
+    @extend %flexConfig
+}
+
+@media (max-width: 768px) {
+    .flexDiv {
+        flex-direction: column;
+    }
+}
+
+.table {
+    @extend %flexConfig
+}
+
+@media (max-width: 576px) {
+    .table {
+        flex-direction: column;
+    }
+}
